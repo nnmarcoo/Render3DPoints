@@ -19,10 +19,10 @@ class Camera {
         Camera(float fov) : FOV(fov), roll(0.0f) {}
         Camera() : FOV(60), roll(0.0f) {}
 
-        void  setFOV(float newFOV) { FOV = newFOV; }
-        float getFOV() const { return FOV; }
-        void  setRoll(float newRoll) { roll = newRoll; }
-        float getRoll() const { return roll; }
+        void  SetFOV(float newFOV) { FOV = newFOV; }
+        float GetFOV() const { return FOV; }
+        void  SetRoll(float newRoll) { roll = newRoll; }
+        float GetRoll() const { return roll; }
 
         virtual point2D Project(point3D point) = 0;
 
