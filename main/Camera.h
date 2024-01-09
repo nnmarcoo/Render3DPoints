@@ -24,7 +24,7 @@ class Camera {
         void  SetRoll(float newRoll) { roll = newRoll; }
         float GetRoll() const { return roll; }
 
-        virtual point2D Project(point3D point);
+        virtual point2D Project(point3D point) { return point2D{point.x, point.y}; }
 
     private:
         float FOV, roll;
