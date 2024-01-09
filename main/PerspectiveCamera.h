@@ -8,7 +8,7 @@ public:
     PerspectiveCamera(float fov) : Camera(fov) {}
     PerspectiveCamera() : Camera() {}
 
-    virtual point2D Project(point3D point);
+    virtual Point2D Project(Point3D point);
     
     // TODO: Add calculate point pos
 };
