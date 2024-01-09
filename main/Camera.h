@@ -1,4 +1,4 @@
-@pragma once
+#pragma once
 
 typedef struct {
     float x, y, z;
@@ -24,7 +24,7 @@ class Camera {
         void  SetRoll(float newRoll) { roll = newRoll; }
         float GetRoll() const { return roll; }
 
-        virtual point2D Project(point3D point) = 0;
+        virtual point2D Project(point3D point);
 
     private:
         float FOV, roll;
