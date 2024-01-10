@@ -8,6 +8,4 @@ public:
   PerspectiveCamera() : Camera() {}
 
   virtual Point2D Project(Point3D point);
-  
-  // TODO: Add calculate point pos
 };

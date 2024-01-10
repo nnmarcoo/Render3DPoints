@@ -1,7 +1,21 @@
 #include "Renderer.h"
+#include <chrono>
+#include <U8g2lib.h>
 
 void Renderer::Render() {
-  DeltaTime++; // TODO: This should not be this?
+  auto before = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> duration(0);
 
-  // TODO: Call camera.Project and return the screen points or draw them?
+  display.clearBuffer();
+
+  for (auto edge : edges) {
+    
+  }
+
+  display.sendBuffer();
+
+  auto after = std::chrono::high_resolution_clock::now();
+  duration = after - before;
+  deltatime = duration.count();
+  before = after;
 }
