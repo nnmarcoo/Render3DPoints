@@ -15,17 +15,14 @@ typedef struct {
 class Camera {
     
 public:
-  Camera(float fov, float roll) : FOV(fov), roll(roll) {}
-  Camera(float fov) : FOV(fov), roll(0.0f) {}
-  Camera() : FOV(60), roll(0.0f) {}
+  Camera(float fov) : FOV(fov) {}
+  Camera() : FOV(60) {}
 
   void  SetFOV(float nFOV)   { FOV = nFOV;   }
-  void  SetRoll(float nroll) { roll = nroll; }
   float GetFOV() const       { return FOV;   }
-  float GetRoll() const      { return roll;  }
 
   virtual Point2D Project(Point3D point) { return Point2D{point.x, point.y}; }
 
 private:
-  float FOV, roll;
+  float FOV;
 };

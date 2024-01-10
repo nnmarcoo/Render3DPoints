@@ -4,7 +4,6 @@
 class PerspectiveCamera : public Camera {
     
 public:
-  PerspectiveCamera(float fov, float roll) : Camera(fov, roll) {}
   PerspectiveCamera(float fov) : Camera(fov) {}
   PerspectiveCamera() : Camera() {}
 
