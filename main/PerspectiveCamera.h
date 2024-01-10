@@ -4,11 +4,11 @@
 class PerspectiveCamera : public Camera {
     
 public:
-    PerspectiveCamera(float fov, float roll) : Camera(fov, roll) {}
-    PerspectiveCamera(float fov) : Camera(fov) {}
-    PerspectiveCamera() : Camera() {}
+  PerspectiveCamera(float fov, float roll) : Camera(fov, roll) {}
+  PerspectiveCamera(float fov) : Camera(fov) {}
+  PerspectiveCamera() : Camera() {}
 
-    virtual Point2D Project(Point3D point);
-    
-    // TODO: Add calculate point pos
+  virtual Point2D Project(Point3D point);
+  
+  // TODO: Add calculate point pos
 };

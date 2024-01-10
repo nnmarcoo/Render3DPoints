@@ -22,14 +22,13 @@ std::vector<Edge> edges;
 PerspectiveCamera camera;
 Renderer renderer(camera, points, edges);
 
- 
 void setup(void) {
   display.begin();
 }
  
 void loop(void) {
   display.clearBuffer();
-
+  
   // Calculate points here
 
   display.sendBuffer();

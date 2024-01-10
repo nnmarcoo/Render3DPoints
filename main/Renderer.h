@@ -6,15 +6,15 @@
 class Renderer {
 
 public:
-    Renderer(Camera camera, std::vector<Point3D> points, std::vector<Edge> edges) : camera(camera), points(points), edges(edges) {};
+  Renderer(Camera camera, std::vector<Point3D> points, std::vector<Edge> edges) : camera(camera), points(points), edges(edges) {};
 
-    void Render();
+  void Render();
 
 private:
-    Camera camera;
-    float DeltaTime = 0.0f; // What does this do
+  Camera camera;
+  float DeltaTime = 0.0f; // What does this do
 
-    std::vector<Point3D> points;
-    std::vector<Edge> edges;
+  std::vector<Point3D> points;
+  std::vector<Edge> edges;
 
 };
