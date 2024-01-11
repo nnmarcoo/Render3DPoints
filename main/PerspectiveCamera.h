@@ -7,5 +7,5 @@ public:
   PerspectiveCamera(float fov) : Camera(fov) {}
   PerspectiveCamera() : Camera() {}
 
-  virtual Point2D Project(Point3D point);
+  Point2D Project(Point3D point) override;
 };
