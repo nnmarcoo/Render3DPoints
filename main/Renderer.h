@@ -11,7 +11,7 @@ public:
   void Render();
 
   void SetScale(float nscale)    { scale = nscale;  }
-  void SetPosition(Point2D npos) { position = npos; }
+  void SetOrigin(Point2D norigin) { origin = norigin; }
   void SetRotation(float nrot)   { rotation = nrot; }
 
   // TODO: Set rotation
@@ -21,7 +21,7 @@ private:
   Camera camera;
 
   // TODO: These attributes should probably exist for individual objects, not the entire renderer
-  Point2D position;
+  Point2D origin;
   float scale = 1.0f;
   float rotation = 0.0f;
 
