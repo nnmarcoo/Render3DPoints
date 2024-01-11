@@ -37,7 +37,7 @@ std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {1, 3},
                               Edge {2, 4}, Edge {3, 4}};
                               */
 
-PerspectiveCamera camera(60.0f);
+PerspectiveCamera camera();
 Renderer renderer(display, camera, points, edges);
 
 void setup(void) {
