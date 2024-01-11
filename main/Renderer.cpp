@@ -14,7 +14,6 @@ void Renderer::Render() {
                      scale * n2.x + position.x, 
                      scale * n2.y + position.y);
   }
-
   display.sendBuffer();
 }
 
