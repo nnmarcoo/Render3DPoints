@@ -6,8 +6,8 @@ void Renderer::Render() {
   display.clearBuffer();
 
   for (auto edge : edges) {
-    Point2D n1 = camera.Project(RotateX(points[edge.n1]));
-    Point2D n2 = camera.Project(RotateX(points[edge.n2]));
+    Point2D n1 = camera.Project(points[edge.n1]);
+    Point2D n2 = camera.Project(points[edge.n2]);
 
     display.drawLine(scale * n1.x + origin.x, 
                      scale * n1.y + origin.y, 
