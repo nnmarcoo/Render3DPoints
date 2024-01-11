@@ -29,10 +29,10 @@ std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3},
                               */
 
 //cuboid
-std::vector<Point3D> points { Point3D {-1.0f, -1.0f, -3.0f}, Point3D {-1.0f, -1.0f,  3.0f},
-                              Point3D { 1.0f, -1.0f, -3.0f}, Point3D {-1.0f,  1.0f, -3.0f}, 
-                              Point3D {-1.0f,  1.0f,  3.0f}, Point3D { 1.0f, -1.0f,  3.0f},
-                              Point3D { 1.0f,  1.0f, -3.0f}, Point3D { 1.0f,  1.0f,  3.0f}};
+std::vector<Point3D> points { Point3D {-1.0f, -1.0f, -10.0f}, Point3D {-1.0f, -1.0f,  10.0f},
+                              Point3D { 1.0f, -1.0f, -10.0f}, Point3D {-1.0f,  1.0f, -10.0f}, 
+                              Point3D {-1.0f,  1.0f,  10.0f}, Point3D { 1.0f, -1.0f,  10.0f},
+                              Point3D { 1.0f,  1.0f, -10.0f}, Point3D { 1.0f,  1.0f,  10.0f}};
 
 std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3}, 
                               Edge {2, 5}, Edge {3, 6}, Edge {3, 4}, 
