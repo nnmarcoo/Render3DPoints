@@ -65,9 +65,6 @@ void setup(void) {
  
 float r;
 void loop(void) {
-  r+=.02;
-  renderer.SetRotation(r);
-  //camera.SetFOV(r);
-  //renderer.SetScale(r);
+  renderer.SetRotation(r+=.03);
   renderer.Render();
 }
