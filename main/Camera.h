@@ -10,8 +10,8 @@ public:
   Camera(float fov) : FOV(fov) {}
   Camera()          : FOV(60.0f) {}
 
-  void  SetFOV(float nFOV)   { FOV = nFOV;   }
-  float GetFOV() const       { return FOV;   }
+  void  SetFOV(float nFOV)   { FOV = nFOV; }
+  float GetFOV() const       { return FOV; }
 
   virtual Point2D Project(Point3D point) { return Point2D {point.x, point.y}; }
 

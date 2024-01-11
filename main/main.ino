@@ -26,13 +26,20 @@ std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3},
                               Edge {4, 7}, Edge {6, 7}, Edge {7, 5}, 
                               Edge {5, 1}, Edge {4, 1}, Edge {2, 6}};
 
-PerspectiveCamera camera;
+PerspectiveCamera camera(60.0f);
 Renderer renderer(display, camera, points, edges);
 
 void setup(void) {
   display.begin();
+
+  renderer.SetScale(10);
+  renderer.SetPosition(Point2D {64, 32});
+  renderer.SetRotation(5.0f);
 }
  
+float r;
 void loop(void) {
+  r+=.08;
+  renderer.SetRotation(r);
   renderer.Render();
 }
