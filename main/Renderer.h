@@ -26,7 +26,7 @@ private:
   std::vector<Point3D> points;
   std::vector<Edge> edges;
 
-  // TODO: These exist mostly for demo
+  // NOTE: These exist mostly for demo
   Point3D RotateX(Point3D point);
   Point3D RotateY(Point3D point);
   Point3D RotateZ(Point3D point);
