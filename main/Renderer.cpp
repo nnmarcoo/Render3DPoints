@@ -6,8 +6,8 @@ void Renderer::Render() {
   display.clearBuffer();
 
   for (auto edge : edges) {
-    Point2D n1 = camera.Project(RotateY(RotateZ(points[edge.n1])));
-    Point2D n2 = camera.Project(RotateY(RotateZ(points[edge.n2])));
+    Point2D n1 = camera.Project(RotateY(RotateX(points[edge.n1])));
+    Point2D n2 = camera.Project(RotateY(RotateX(points[edge.n2])));
 
     display.drawLine(scale * n1.x + position.x, 
                      scale * n1.y + position.y, 
@@ -27,16 +27,16 @@ Point3D Renderer::RotateX(Point3D point) {
 
 Point3D Renderer::RotateY(Point3D point) {
   Point3D output;
-  output.x = cos(rotation) * point.y - sin(rotation) * point.z;
+  output.x = cos(rotation) * point.x + sin(rotation) * point.z;
   output.y = point.y;
-  output.z = sin(rotation) * point.y + cos(rotation) * point.z;
+  output.z = -sin(rotation) * point.x + cos(rotation) * point.z;
   return output;
 }
 
 Point3D Renderer::RotateZ(Point3D point) {
   Point3D output;
-  output.x = cos(rotation) * point.y - sin(rotation) * point.z;
-  output.y = sin(rotation) * point.y + cos(rotation) * point.z;
+  output.x = cos(rotation) * point.x - sin(rotation) * point.y;
+  output.y = sin(rotation) * point.x + cos(rotation) * point.y;
   output.z = point.z;
   return output;
 }

@@ -43,7 +43,7 @@ Renderer renderer(display, camera, points, edges);
 void setup(void) {
   display.begin();
 
-  renderer.SetScale(10);
+  renderer.SetScale(25);
   renderer.SetPosition(Point2D {64, 32});
   renderer.SetRotation(5.0f);
 }
