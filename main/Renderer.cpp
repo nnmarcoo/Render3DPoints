@@ -10,7 +10,7 @@ void Renderer::Render() {
     Point2D n2 = camera.Project(points[edge.n2]);
 
     display.drawLine(scale * n1.x + origin.x, 
-                     scale * n1.y + origin.y, 
+                     scale * n1.y + origin.y,
                      scale * n2.x + origin.x, 
                      scale * n2.y + origin.y);
   }

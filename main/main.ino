@@ -58,12 +58,11 @@ void setup(void) {
 
   renderer.SetScale(20);
   renderer.SetOrigin(Point2D {64, 32});
-  renderer.SetRotation(2.0f);
 }
  
 float r;
 void loop(void) {
   r+=.05;
-  renderer.SetRotation(r);
+  //renderer.SetRotation(r);
   renderer.Render();
 }
