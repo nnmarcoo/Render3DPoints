@@ -1,6 +1,16 @@
 #pragma once
+#include <stddef.h>
 
-typedef struct { float x, y, z; } Point3D;
+template <typename T, size_t size>
+struct Point { 
+  T cords[size]; 
+
+  T& operator[](size_t index) {
+        return cords[index];
+    }
+};
+
+typedef struct { float x, y, z;    } Point3D;
 typedef struct { float x, y;    } Point2D;
 typedef struct { int n1, n2;    } Edge;
 
@@ -13,7 +23,7 @@ public:
   void  SetFOV(float nFOV)   { FOV = nFOV; }
   float GetFOV() const       { return FOV; }
 
-  virtual Point2D Project(Point3D point) { return Point2D {point.x, point.y}; }
+  virtual Point2D Project(Point3D point) { return {0, 0}; }
 
 private:
   float FOV;
