@@ -5,6 +5,7 @@
 struct Edge  { int p1, p2; };
 
 struct Point { // Add throw for out of bounds
+  
   std::unique_ptr<float[]> cords;
   size_t size;
 

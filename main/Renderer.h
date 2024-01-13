@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Camera.h"
+
 class U8G2;
 
 class Renderer {
