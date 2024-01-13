@@ -25,4 +25,8 @@ private:
 
   std::vector<Point> points;
   std::vector<Edge> edges;
+
+  Point RotateX(Point point);
+  Point RotateY(Point point);
+  Point RotateZ(Point point);
 };
