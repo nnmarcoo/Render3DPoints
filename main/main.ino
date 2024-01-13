@@ -26,32 +26,6 @@ std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3},
                               Edge {2, 5}, Edge {3, 6}, Edge {3, 4}, 
                               Edge {4, 7}, Edge {6, 7}, Edge {7, 5}, 
                               Edge {5, 1}, Edge {4, 1}, Edge {2, 6}};
-                              
-                          
-/*
-//cuboid
-std::vector<Point3D> points { Point3D {-1.0f, -1.0f, -10.0f}, Point3D {-1.0f, -1.0f,  10.0f},
-                              Point3D { 1.0f, -1.0f, -10.0f}, Point3D {-1.0f,  1.0f, -10.0f}, 
-                              Point3D {-1.0f,  1.0f,  10.0f}, Point3D { 1.0f, -1.0f,  10.0f},
-                              Point3D { 1.0f,  1.0f, -10.0f}, Point3D { 1.0f,  1.0f,  10.0f}};
-
-std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3}, 
-                              Edge {2, 5}, Edge {3, 6}, Edge {3, 4}, 
-                              Edge {4, 7}, Edge {6, 7}, Edge {7, 5}, 
-                              Edge {5, 1}, Edge {4, 1}, Edge {2, 6}};
-                              */
-                              
-                              
-/*
-//pyramid
-std::vector<Point3D> points { Point3D {-1.0f, -1.0f, -1.0f}, Point3D {-1.0f, -1.0f, 1.0f},
-                              Point3D { 1.0f, -1.0f, -1.0f}, Point3D { 1.0f, -1.0f, 1.0f},
-                              Point3D {0.0f, 1.0f, 0.0f}};
-
-std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {1, 3}, 
-                              Edge {2, 3}, Edge {0, 4}, Edge {1, 4}, 
-                              Edge {2, 4}, Edge {3, 4}};
-                              */
 
 PerspectiveCamera camera;
 Renderer renderer(display, camera, points, edges);
