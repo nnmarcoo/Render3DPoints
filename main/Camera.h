@@ -4,14 +4,13 @@
 
 struct Edge  { int p1, p2; };
 
-struct Point {
+struct Point { // Add throw for out of bounds
   std::unique_ptr<float[]> cords;
   size_t size;
 
   Point() : cords(nullptr), size(0) {}
 
-  Point(int size) : cords(std::make_unique<float[]>(size)), 
-                    size(size) {}
+  Point(int size) : cords(std::make_unique<float[]>(size)), size(size) {}
 
   Point(std::initializer_list<float> values) : size(values.size()) {
     cords = std::make_unique<float[]>(size);
