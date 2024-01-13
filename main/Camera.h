@@ -1,18 +1,43 @@
 #pragma once
-#include <stddef.h>
+#include <initializer_list>
+#include <memory>
 
-template <typename T, size_t size>
-struct Point { 
-  T cords[size];
+struct Edge  { int p1, p2; };
 
-  T& operator[](size_t index) {
-        return cords[index];
+struct Point {
+  std::unique_ptr<float[]> cords;
+  size_t size;
+
+  Point() : cords(nullptr), size(0) {}
+
+  Point(int size) : cords(std::make_unique<float[]>(size)), 
+                    size(size) {}
+
+  Point(std::initializer_list<float> values) : size(values.size()) {
+    cords = std::make_unique<float[]>(size);
+    std::copy(values.begin(), values.end(), cords.get());
+  }
+
+  Point(const Point& other) : size(other.size) {
+    cords = std::make_unique<float[]>(size);
+    std::copy(other.cords.get(), other.cords.get() + size, cords.get());
+  }
+
+  float& operator[](size_t index) {
+    return cords[index];
+  }
+
+  Point& operator=(const Point& other) {
+    if (this != &other) {
+      if (size != other.size) {
+        cords = std::make_unique<float[]>(other.size);
+        size = other.size;
+      }
+      std::copy(other.cords.get(), other.cords.get() + size, cords.get());
+    }
+    return *this;
   }
 };
-
-typedef struct { float x, y, z; } Point3D;
-typedef struct { float x, y;    } Point2D;
-typedef struct { int n1, n2;    } Edge;
 
 class Camera {
 
@@ -23,11 +48,7 @@ public:
   void  SetFOV(float nFOV)   { FOV = nFOV; }
   float GetFOV() const       { return FOV; }
 
-  virtual Point2D Project(Point3D point) const { return {0,0}; }
-/*
-  template <typename T, size_t size>
-  virtual Point<T, size> Project(Point point) { return Point<T, size>; }
-  */
+  virtual Point Project(Point point) const { return {0}; }
 
 private:
   float FOV;

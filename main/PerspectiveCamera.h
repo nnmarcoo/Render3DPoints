@@ -2,15 +2,9 @@
 #include "Camera.h"
 
 class PerspectiveCamera : public Camera {
-
 public:
-  PerspectiveCamera(float fov) : Camera(fov) {}
-  PerspectiveCamera() : Camera() {}
-
-  Point2D Project(Point3D point) const override;
-  
-/*
-  template <typename T, size_t size>
-  Point<T, size> Project(Point point) const override;
-  */
+  Point Project(Point point) const override {
+    return { (GetFOV() * point[0]) / (GetFOV() + point[2]),
+             (GetFOV() * point[1]) / (GetFOV() + point[2])};
+  }
 };
