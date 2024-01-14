@@ -3,6 +3,7 @@ import serial
 PORT = 'COM7'
 BAUD = 2000000
 
+
 def flipxbm(xbm):
     output = ''
     i = 0
@@ -19,7 +20,9 @@ def readserialbitmap(comport, baudrate):
     ser = serial.Serial(comport, baudrate, timeout=0.1) # 1/timeout is the frequency at which the port is read
     bitmap = ''
     frame = 0
+
     print('Waiting for data...')
+
     while True:
         data = ser.readline().decode().strip()
         if data:
