@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <U8g2lib.h> // Should this be in the project directory?
 
+#include "Object.h"
 #include "PerspectiveCamera.h"
 #include "OrthographicCamera.h"
 #include "Renderer.h"

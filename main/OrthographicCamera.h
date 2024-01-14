@@ -3,7 +3,6 @@
 
 class OrthographicCamera : public Camera {
 public:
-
   OrthographicCamera() : Camera() {}
   OrthographicCamera(float fov) : Camera(fov) {}
 
