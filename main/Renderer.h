@@ -7,7 +7,7 @@ class U8G2;
 class Renderer {
 
 public:
-  Renderer(U8G2 &display, Camera &camera, std::vector<Object> objects) 
+  Renderer(U8G2 &display, Camera &camera, std::vector<Object*> objects) 
           : display(display), camera(camera), objects(objects) {};
 
   void Render();
@@ -25,7 +25,7 @@ private:
   float scale = 1.0f;
   float rotation = 0.0f;
 
-  std::vector<Object> objects;
+  std::vector<Object*> objects;
 
   Point RotateX(Point point);
   Point RotateY(Point point);

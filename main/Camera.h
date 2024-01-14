@@ -37,6 +37,10 @@ struct Point { // Add throw for out of bounds
     }
     return *this;
   }
+
+  void Translate(size_t dimension, float distance) {
+    cords[dimension] += distance;
+  }
 };
 
 class Camera {
