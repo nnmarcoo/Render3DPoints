@@ -20,7 +20,7 @@ std::vector<Edge> edges     { Edge {0, 1}, Edge {0, 2}, Edge {0, 3},
                               Edge {4, 7}, Edge {6, 7}, Edge {7, 5}, 
                               Edge {5, 1}, Edge {4, 1}, Edge {2, 6}};
 
-OrthographicCamera camera(1.0f);
+PerspectiveCamera camera(6.0f);
 Renderer renderer(display, camera, points, edges);
 
 void setup(void) {

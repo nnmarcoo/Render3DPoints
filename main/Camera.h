@@ -43,7 +43,7 @@ class Camera {
 
 public:
   Camera(float fov) : FOV(fov) {}
-  Camera()          : FOV(60.0f) {}
+  Camera()          : FOV(15.0f) {}
 
   void  SetFOV(float nFOV)   { FOV = nFOV; }
   float GetFOV() const       { return FOV; }
