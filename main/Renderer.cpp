@@ -14,9 +14,9 @@ void Renderer::Render() {
       Point n2 = camera.Project(RotateX(RotateZ(RotateY(points[edge.p2]))));
 
       display.drawLine(scale * n1[0] + origin[0],
-                       scale * n1[1] + origin[1],
+                      -scale * n1[1] + origin[1],
                        scale * n2[0] + origin[0], 
-                       scale * n2[1] + origin[1]);
+                      -scale * n2[1] + origin[1]);
     }
   }
   display.sendBuffer();
