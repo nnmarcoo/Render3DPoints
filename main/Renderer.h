@@ -1,13 +1,14 @@
 #pragma once
 #include <vector>
-#include "Camera.h"
+#include "Object.h"
 
 class U8G2;
 
 class Renderer {
 
 public:
-  Renderer(U8G2 &display, Camera &camera, std::vector<Point> points, std::vector<Edge> edges) : display(display), camera(camera), points(points), edges(edges) {};
+  Renderer(U8G2 &display, Camera &camera, std::vector<Object> objects) 
+          : display(display), camera(camera), objects(objects) {};
 
   void Render();
 
@@ -24,8 +25,7 @@ private:
   float scale = 1.0f;
   float rotation = 0.0f;
 
-  std::vector<Point> points;
-  std::vector<Edge> edges;
+  std::vector<Object> objects;
 
   Point RotateX(Point point);
   Point RotateY(Point point);
