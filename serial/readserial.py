@@ -55,6 +55,5 @@ def convertgif(bitmaps, output):
     images[0].save(output, save_all=True, append_images=images[1:], duration=DURATION, loop=0)
 
 if __name__ == '__main__':
-
     bitmaps = getbitmaps()
     convertgif(bitmaps, os.path.dirname(os.path.realpath(__file__)) + '/' + FILENAME + '.gif')
