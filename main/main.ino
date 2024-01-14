@@ -10,7 +10,7 @@
 //U8G2_SSD1306_128X64_NONAME_F_SW_I2C display(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);  // Low spped I2C
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);    // Low spped I2C Hybrid
 
-std::vector<Object*> objects = {&cube};
+std::vector<Object*> objects = {&cube, &pyramid};
 
 PerspectiveCamera camera(6.0f);
 Renderer renderer(display, camera, objects);
@@ -18,8 +18,11 @@ Renderer renderer(display, camera, objects);
 void setup(void) {
   display.begin();
 
-  renderer.SetScale(20);
+  renderer.SetScale(10);
   renderer.SetOrigin(64, 32);
+
+  pyramid.Translate(0, -2.0f);
+  cube.Translate(0, 2.0f);
 }
  
 float r;
