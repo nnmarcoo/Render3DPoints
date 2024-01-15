@@ -1,8 +1,6 @@
 #pragma once
-#include <vector>
-#include "Object.h"
-
 #include <U8g2lib.h>
+#include "Object.h"
 
 class Renderer {
 public:
