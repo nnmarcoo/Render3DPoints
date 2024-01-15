@@ -3,7 +3,6 @@
 
 #include "ExampleObjects.h"
 #include "OrthographicCamera.h"
-#include "PerspectiveCamera3D.h"
 #include "PerspectiveCamera4D.h"
 #include "Renderer.h"
 
