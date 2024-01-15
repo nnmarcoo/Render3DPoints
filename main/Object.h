@@ -1,14 +1,10 @@
 #pragma once
 #include <vector>
-#include <initializer_list>
 #include "Camera.h"
 
 class Object {
 public:
   Object(std::vector<Point> points, std::vector<Edge> edges)
-        : points(points), edges(edges) {}
-
-  Object(std::initializer_list<Point> points, std::initializer_list<Edge> edges)
         : points(points), edges(edges) {}
 
   void SetPoints(const std::vector<Point>& npoints) { points = npoints; }
