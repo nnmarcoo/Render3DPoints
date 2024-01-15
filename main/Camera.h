@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Vertex.h"
 
 class Camera {
