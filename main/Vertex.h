@@ -38,6 +38,8 @@ public:
     cords[dimension] += distance;
   }
 
+  size_t GetSize() { return size; }
+
 private:
   std::unique_ptr<float[]> cords;
   size_t size;
