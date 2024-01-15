@@ -21,7 +21,9 @@ public:
       point.Translate(dimension, distance);
   }
 
-  // TODO: Implement universal rotation somehow
+  void Rotate(size_t d1, size_t d2, float angle) {
+    // TODO: Implement
+  }
 
 private:
   Point position;
