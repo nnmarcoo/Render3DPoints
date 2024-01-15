@@ -14,10 +14,12 @@ public:
   const std::vector<Edge>& GetEdges() const   { return edges;  }
 
   void Translate(size_t dimension, float distance) {
-    position[dimension] += distance;
+    position.Translate(dimension, distance);
     for (Point &point : points)
       point.Translate(dimension, distance);
   }
+
+  // TODO: Implement universal rotation somehow
 
 private:
   Point position;
