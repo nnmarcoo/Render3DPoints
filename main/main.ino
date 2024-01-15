@@ -13,7 +13,7 @@
 //U8G2_SSD1306_128X64_NONAME_F_SW_I2C display(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);  // Low spped I2C
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);    // Low spped I2C Hybrid
 
-std::vector<Object*> objects = {&tesseract};
+std::vector<Object*> objects = {&cube};
 
 PerspectiveCamera camera;
 Renderer renderer(display, camera, objects);
@@ -31,7 +31,7 @@ unsigned int frame = 0;
 void loop(void) {
   r += 0.015;
   //renderer.SetRotation(r);
-  //cube.Translate(0, 2.5*cos(r*5) / SCALE);
+  cube.Translate(0, 2.5*cos(r*5) / SCALE);
   renderer.Render();
   //if (frame < 500)
    // display.writeBufferXBM(Serial);
