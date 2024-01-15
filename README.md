@@ -1,1 +1,1 @@
-# Render3DPoints
+# RenderPoints
