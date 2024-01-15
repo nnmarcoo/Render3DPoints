@@ -33,8 +33,8 @@ void loop(void) {
   renderer.SetRotation(r);
   cube.Translate(0, 2.5*cos(r*5) / SCALE);
   renderer.Render();
-  if (frame < 500)
-    display.writeBufferXBM(Serial);
+  //if (frame < 500)
+   // display.writeBufferXBM(Serial);
 
   frame++;
 }
