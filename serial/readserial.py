@@ -6,7 +6,7 @@ from io import BytesIO
 PORT     = 'COM7'
 FILENAME = 'output'
 BAUD     = 2000000
-FRAMES   = 418
+FRAMES   = 85
 DURATION = 25 # milliseconds per frame
 
 
