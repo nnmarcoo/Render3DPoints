@@ -2,7 +2,7 @@
 #include <U8g2lib.h> // Should this be in the project directory?
 
 #include "ExampleObjects.h"
-#include "PerspectiveCamera.h"
+#include "PerspectiveCamera3D.h"
 #include "OrthographicCamera.h"
 #include "Renderer.h"
 
@@ -12,7 +12,7 @@ U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
 std::vector<Object*> objects = {&cube};
 
-PerspectiveCamera camera;
+PerspectiveCamera3D camera;
 Renderer renderer(display, camera, objects);
 
 void setup(void) {
