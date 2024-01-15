@@ -7,7 +7,7 @@ PORT     = 'COM7'
 FILENAME = 'output'
 BAUD     = 2000000
 FRAMES   = 418
-DURATION = 25
+DURATION = 25 # milliseconds per frame
 
 
 def flipxbm(xbm): # unused
