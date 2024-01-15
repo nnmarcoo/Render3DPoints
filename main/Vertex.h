@@ -1,3 +1,6 @@
+#include <initializer_list>
+#include <memory>
+
 struct Edge  { int p1, p2; };
 
 class Point { // TODO: Add throw for out of bounds
