@@ -6,8 +6,8 @@ from io import BytesIO
 PORT     = 'COM7'
 FILENAME = 'output'
 BAUD     = 2000000
-FRAMES   = 85
-DURATION = 25 # milliseconds per frame
+FRAMES   = 150
+DURATION = 40 # milliseconds per frame
 
 
 def flipxbm(xbm): # unused
