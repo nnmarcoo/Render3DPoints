@@ -2,6 +2,8 @@
 #include <vector>
 #include "Camera.h"
 
+// TODO: Support constructor that takes list of Objects
+
 class Object {
 public:
   Object(size_t dimensions, std::vector<Point> points, std::vector<Edge> edges)
