@@ -4,8 +4,8 @@
 
 class Object {
 public:
-  Object(std::vector<Point> points, std::vector<Edge> edges)
-        : points(points), edges(edges) {}
+  Object(size_t dimensions, std::vector<Point> points, std::vector<Edge> edges)
+        : position(dimensions), rotation(dimensions),  points(points), edges(edges) {}
 
   void SetPoints(const std::vector<Point>& npoints) { points = npoints; }
   void SetEdges(const std::vector<Edge>& nedges)    { edges = nedges;   }
@@ -20,6 +20,9 @@ public:
   }
 
 private:
+  Point position;
+  Point rotation;
+
   std::vector<Point> points;
   std::vector<Edge> edges;
 };

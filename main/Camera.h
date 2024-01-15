@@ -1,7 +1,7 @@
 #pragma once
 #include <initializer_list>
 #include <memory>
-#include "Point.h"
+#include "Vertex.h"
 
 class Camera {
 public:

@@ -1,10 +1,10 @@
 struct Edge  { int p1, p2; };
 
-struct Point { // Add throw for out of bounds
+class Point { // TODO: Add throw for out of bounds
 public:
   Point() : cords(nullptr), size(0) {}
 
-  Point(int size) : cords(std::make_unique<float[]>(size)), size(size) {}
+  Point(size_t size) : cords(std::make_unique<float[]>(size)), size(size) {}
 
   Point(std::initializer_list<float> values) : size(values.size()) {
     cords = std::make_unique<float[]>(size);
