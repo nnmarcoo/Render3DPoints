@@ -5,7 +5,6 @@
 class U8G2;
 
 class Renderer {
-
 public:
   Renderer(U8G2 &display, Camera &camera, std::vector<Object*> objects) 
           : display(display), camera(camera), objects(objects) {};
