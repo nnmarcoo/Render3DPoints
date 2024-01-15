@@ -21,16 +21,22 @@ void setup(void) {
   
   renderer.SetScale(SCALE);
   renderer.SetOrigin(64, 32);
+
+  cube.Rotate(1, 2, 1.0f);
+  cube.Rotate(0, 2, -2.0f);
 }
  
 float r;
 unsigned int frame = 0;
 void loop(void) {
-  r += 0.015;
+  r += 0.015f;
   //renderer.SetRotation(r);
   cube.Translate(0, 2.5*cos(r*5) / SCALE);
+  cube.Rotate(1, 2, 2.5*cos(r*5) / SCALE);
+  cube.Rotate(0, 2, 2.5*cos(r*5) / SCALE);
+  cube.Rotate(0, 1, 2.5*sin(r*5) / SCALE);
   renderer.Render();
-  //if (frame < 500)
+  //if (frame < 150)
     //display.writeBufferXBM(Serial);
 
   frame++;
