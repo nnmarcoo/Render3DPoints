@@ -3,7 +3,7 @@
 
 class OrthographicCamera : public Camera {
 public:
-  Point Project(Point point) const override {
+  virtual Point Project(Point point) const override {
     return { point[0], point[1] };
   }
 };
