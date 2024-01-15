@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Camera.h"
+#include <math.h>
 
 // TODO: Support constructor that takes list of Objects
 
@@ -22,7 +23,20 @@ public:
   }
 
   void Rotate(size_t d1, size_t d2, float angle) {
-    // TODO: Implement
+    rotation[d1] += angle;
+    rotation[d2] += angle;
+    
+    for (Point &point : points) {
+      for (size_t d = 0; d < point.GetSize(); d++)
+        point.Translate(d, -position[d]);
+    
+      float oldpoint = point[d1];
+      point[d1] = cos(angle) * point[d1] - sin(angle) * point[d2];
+      point[d2] = sin(angle) * oldpoint + cos(angle) * point[d2];
+
+      for (size_t d = 0; d < point.GetSize(); d++) 
+          point.Translate(d, position[d]);
+    }
   }
 
 private:
