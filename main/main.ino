@@ -12,7 +12,7 @@ U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
 std::vector<Object*> objects = {&tesseract};
 
-PerspectiveCamera4D camera(6.0f, 2.0f);
+PerspectiveCamera4D camera(6.0f, 3.0f);
 Renderer renderer(display, camera, objects);
 
 void setup(void) {
