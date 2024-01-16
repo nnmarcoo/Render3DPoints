@@ -12,7 +12,7 @@ U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
 std::vector<Object*> objects = {&tesseract};
 
-PerspectiveCamera4D camera(15.0f, 0.5f);
+PerspectiveCamera4D camera(6.0f, 2.0f);
 Renderer renderer(display, camera, objects);
 
 void setup(void) {
@@ -31,7 +31,7 @@ void loop(void) {
   //tesseract.Translate(0, 2.5*cos(r*5) / SCALE);
   //tesseract.Rotate(1, 2, 2.5*cos(r*5) / SCALE);
   //tesseract.Rotate(0, 1, 0.015f);
-  tesseract.Rotate(1, 3, 0.015f);
+  tesseract.Rotate(1, 2, 0.015f);
   //tesseract.Rotate(0, 1, 2.5*sin(r*5) / SCALE);
   renderer.Render();
   //if (frame < 150)
