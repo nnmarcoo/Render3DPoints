@@ -28,8 +28,8 @@ unsigned int frame = 0;
 void loop(void) {
   tesseract.Rotate(0, 3, 0.015f);
   renderer.Render();
-  if (frame < 600)
-    display.writeBufferXBM(Serial);
+  //if (frame < 600)
+    //display.writeBufferXBM(Serial);
 
   frame++;
 }
