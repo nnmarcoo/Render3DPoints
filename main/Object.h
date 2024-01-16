@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
+#include <cmath>
 #include "Camera.h"
-#include <math.h>
 
 // TODO: Support constructor that takes list of Objects
 
@@ -37,6 +37,10 @@ public:
       for (size_t d = 0; d < point.GetSize(); d++) 
           point.Translate(d, position[d]);
     }
+  }
+
+  void GenSquare(unsigned int dimension) {
+    unsigned int points = pow(2, dimension);
   }
 
 private:
