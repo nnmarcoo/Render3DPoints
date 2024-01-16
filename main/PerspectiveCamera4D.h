@@ -9,7 +9,7 @@ public:
 
   void SetDistance(float ndistance) { distance = ndistance; };
 
-  Point Project(Point point) const override {
+  virtual Point Project(Point point) const override {
     float w = 1 / (distance - point[3]);
     return 
       PerspectiveCamera3D::Project( {
