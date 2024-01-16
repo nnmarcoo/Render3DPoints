@@ -35,10 +35,6 @@ private:
   Camera &camera;
   Point origin;
 
-  // TODO: Add rotation ??
   float scale = 1.0f;
-  float rotation = 0.0f;
-
   std::vector<Object*> objects;
-
 };

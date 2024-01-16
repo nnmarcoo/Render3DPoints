@@ -9,7 +9,7 @@ public:
   void  SetFOV(float nFOV)   { FOV = nFOV; }
   float GetFOV() const       { return FOV; }
 
-  virtual Point Project(Point point) const { return {0}; }
+  virtual Point Project(Point point) const { return {0,0}; }
 
 private:
   float FOV;
