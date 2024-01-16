@@ -6,13 +6,13 @@
 #include "PerspectiveCamera4D.h"
 #include "Renderer.h"
 
-#define SCALE 20
+#define SCALE 15
  
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
 std::vector<Object*> objects = {&tesseract};
 
-PerspectiveCamera4D camera(6.0f, 2.0f);
+PerspectiveCamera4D camera(4.0f, 2.0f);
 Renderer renderer(display, camera, objects);
 
 void setup(void) {
@@ -21,22 +21,15 @@ void setup(void) {
   
   renderer.SetScale(SCALE);
   renderer.SetOrigin(64, 32);
-  tesseract.Rotate(1, 2, 45);
+  //tesseract.Rotate(0, 2, -0.75f);
 }
  
-float r;
 unsigned int frame = 0;
 void loop(void) {
-  r += 0.015f;
-  //renderer.SetRotation(r);
-  //tesseract.Translate(0, 2.5*cos(r*5) / SCALE);
-  //tesseract.Rotate(1, 2, 2.5*cos(r*5) / SCALE);
-  //tesseract.Rotate(0, 1, 0.015f);
-  tesseract.Rotate(1, 3, 0.015f);
-  //tesseract.Rotate(0, 1, 2.5*sin(r*5) / SCALE);
+  tesseract.Rotate(0, 3, 0.015f);
   renderer.Render();
-  //if (frame < 150)
-    //display.writeBufferXBM(Serial);
+  if (frame < 600)
+    display.writeBufferXBM(Serial);
 
   frame++;
 }
