@@ -3,20 +3,24 @@
 
 struct Edge  { int p1, p2; };
 
-class Point { // TODO: Add throw for out of bounds
+class Point {
 public:
   Point() : cords(nullptr), size(0) {}
 
-  Point(size_t size) : cords(std::make_unique<float[]>(size)), size(size) {}
+  Point(size_t size) : cords(new float[size]), size(size) {}
 
   Point(std::initializer_list<float> values) : size(values.size()) {
-    cords = std::make_unique<float[]>(size);
-    std::copy(values.begin(), values.end(), cords.get());
+    cords = new float[size];
+    std::copy(values.begin(), values.end(), cords);
   }
 
   Point(const Point& other) : size(other.size) {
-    cords = std::make_unique<float[]>(size);
-    std::copy(other.cords.get(), other.cords.get() + size, cords.get());
+    cords = new float[size];
+    std::copy(other.cords, other.cords + size, cords);
+  }
+
+  ~Point() {
+    delete[] cords;
   }
 
   float& operator[](size_t index) {
@@ -25,11 +29,11 @@ public:
 
   Point& operator=(const Point& other) {
     if (this != &other) {
-      if (size != other.size) {
-        cords = std::make_unique<float[]>(other.size);
-        size = other.size;
-      }
-      std::copy(other.cords.get(), other.cords.get() + size, cords.get());
+      delete[] cords;
+
+      size = other.size;
+      cords = new float[size];
+      std::copy(other.cords, other.cords + size, cords);
     }
     return *this;
   }
@@ -38,9 +42,9 @@ public:
     cords[dimension] += distance;
   }
 
-  size_t GetSize() { return size; }
+  size_t GetSize() const { return size; }
 
 private:
-  std::unique_ptr<float[]> cords;
+  float* cords;
   size_t size;
 };
