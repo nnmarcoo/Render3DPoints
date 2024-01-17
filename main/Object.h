@@ -10,8 +10,8 @@ public:
   Object(size_t dimensions, std::vector<Point> points, std::vector<Edge> edges)
         : position(dimensions), rotation(dimensions),  points(points), edges(edges) {}
 
-  void SetPoints(const std::vector<Point>& npoints) { points = npoints; }
-  void SetEdges(const std::vector<Edge>& nedges)    { edges = nedges;   }
+  void SetPoints(const std::vector<Point> npoints) { points = npoints; }
+  void SetEdges(const std::vector<Edge> nedges)    { edges = nedges;   }
 
   const std::vector<Point>& GetPoints() const { return points; }
   const std::vector<Edge>& GetEdges() const   { return edges;  }
@@ -39,8 +39,11 @@ public:
     }
   }
 
-  void GenSquare(unsigned int dimension) {
-    unsigned int points = pow(2, dimension);
+  static Object GenSquare(unsigned int dimension) {
+    for (int i = 0; i < pow(2, dimension); i++) {
+
+    }
+    return {0, {}, {}};
   }
 
 private:
