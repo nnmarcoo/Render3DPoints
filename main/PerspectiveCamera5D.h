@@ -8,7 +8,7 @@ public:
   PerspectiveCamera5D(float fov, float distance) : PerspectiveCamera4D(fov, distance) {}
 
   virtual Point Project(Point point) const override {
-    float w = 1 / (GetDistance() - point[3]);
+    float w = 1 / (GetDistance() + 1 - point[4]);
     return 
       PerspectiveCamera4D::Project( {
         point[0] * w,

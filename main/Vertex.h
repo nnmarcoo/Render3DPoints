@@ -1,7 +1,7 @@
 #include <initializer_list>
 #include <memory>
 
-struct Edge  { int p1, p2; };
+struct Edge { int p1, p2; };
 
 class Point {
 public:

@@ -34,7 +34,7 @@ public:
       point[d1] = cos(angle) * point[d1] - sin(angle) * point[d2];
       point[d2] = sin(angle) * oldpoint  + cos(angle) * point[d2];
 
-      for (size_t d = 0; d < point.GetSize(); d++) 
+      for (size_t d = 0; d < point.GetSize(); d++)
           point.Translate(d, position[d]);
     }
   }
