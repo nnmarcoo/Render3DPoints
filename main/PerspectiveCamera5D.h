@@ -5,7 +5,7 @@ class PerspectiveCamera5D : public PerspectiveCamera4D {
 public:
   PerspectiveCamera5D() : PerspectiveCamera4D() {}
   PerspectiveCamera5D(float fov) : PerspectiveCamera4D(fov), distance(4.0f) {}
-  PerspectiveCamera5D(float fov, float distance) : PerspectiveCamera4D(fov, distance) {}
+  PerspectiveCamera5D(float fov, float distance) : PerspectiveCamera4D(fov, distance), distance(distance + 1) {}
   PerspectiveCamera5D(float fov, float distance, float distance2) : PerspectiveCamera4D(fov, distance), distance(distance2) {}
 
   void  SetDistance2(float ndistance) { distance = ndistance; };
