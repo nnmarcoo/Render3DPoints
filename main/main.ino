@@ -21,8 +21,6 @@ void setup(void) {
   
   renderer.SetScale(SCALE);
   renderer.SetOrigin(64, 32);
-  
-  //penteract.Rotate(0, 2, -0.60f);
 }
  
 unsigned int frame = 0;
@@ -31,8 +29,9 @@ void loop(void) {
   penteract.Rotate(0, 3, 0.015f);
   penteract.Rotate(3, 4, 0.015f);
   renderer.Render();
-  if (frame < 600)
-    display.writeBufferXBM(Serial);
+
+ // if (frame < 600)
+   // display.writeBufferXBM(Serial);
 
   frame++;
 }
