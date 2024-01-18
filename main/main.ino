@@ -17,7 +17,7 @@ Renderer renderer(display, camera, objects);
 
 void setup(void) {
   display.begin();
-  Serial.begin(2000000);
+ // Serial.begin(2000000);
   
   renderer.SetScale(SCALE);
   renderer.SetOrigin(64, 32);
