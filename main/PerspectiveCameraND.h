@@ -5,9 +5,10 @@
 
 class PerspectiveCameraND : public PerspectiveCamera3D {
 public:
-  PerspectiveCameraND() : PerspectiveCamera3D(), distance(2.0f), dimensions(1) {}
-  PerspectiveCameraND(float fov) : PerspectiveCamera3D(fov), distance(2.0f) {}
+  PerspectiveCameraND() : PerspectiveCamera3D(), distance(2.0f), dimensions(3) {}
+  PerspectiveCameraND(float fov) : PerspectiveCamera3D(fov), distance(2.0f), dimensions(3) {}
   PerspectiveCameraND(float fov, float distance) : PerspectiveCamera3D(fov), distance(distance) {}
+  PerspectiveCameraND(float fov, float distance, size_t dimensions) : PerspectiveCamera3D(fov), distance(distance), dimensions(dimensions) {}
 
   void  SetDistance(float ndistance) { distance = ndistance; };
   float GetDistance() const { return distance; }
