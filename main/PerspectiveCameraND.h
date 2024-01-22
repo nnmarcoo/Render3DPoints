@@ -14,14 +14,15 @@ public:
   float GetDistance() const { return distance; }
 
   virtual Point Project(Point point) const override {
-    Point pos = {0,0,0};
-    float w = 1 / (distance - point[3]);
-    return 
-      PerspectiveCamera3D::Project( {
-        point[0] * w,
-        point[1] * w,
-        point[2] * w
-      });
+    Point pos = point.GetSize();
+    
+    while (point.GetSize() > 3) {
+      float w = 1 / (distance - point[point.GetSize()-1]);
+      for (int i = 0; i < point.GetSize()) {
+        point[i] * w;
+      }
+    }
+    return PerspectiveCamera3D::Project(point);
   }
 
 private:
