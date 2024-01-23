@@ -4,15 +4,11 @@
 class PerspectiveCamera5D : public PerspectiveCamera4D {
 public:
   PerspectiveCamera5D() : PerspectiveCamera4D() {}
-  PerspectiveCamera5D(float fov) : PerspectiveCamera4D(fov), distance(4.0f) {}
-  PerspectiveCamera5D(float fov, float distance) : PerspectiveCamera4D(fov, distance), distance(distance + 1) {}
-  PerspectiveCamera5D(float fov, float distance, float distance2) : PerspectiveCamera4D(fov, distance), distance(distance2) {}
-
-  void  SetDistance2(float ndistance) { distance = ndistance; };
-  float GetDistance2() const { return distance; }
+  PerspectiveCamera5D(float fov) : PerspectiveCamera4D(fov) {}
+  PerspectiveCamera5D(float fov, float distance) : PerspectiveCamera4D(fov, distance) {} 
 
   virtual Point Project(Point point) const override {
-    float w = 1 / (GetDistance() + GetDistance2() - point[4]);
+    float w = 1 / (GetDistance() - point[4]);
     return 
       PerspectiveCamera4D::Project( {
         point[0] * w,
@@ -21,7 +17,4 @@ public:
         point[3] * w
       });
   }
-
-private:
-  float distance;
 };
