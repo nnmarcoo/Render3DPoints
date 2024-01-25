@@ -39,6 +39,7 @@ public:
     }
   }
 
+  // TODO: Implement
   static Object GenSquare(unsigned int dimension) {
     for (int i = 0; i < pow(2, dimension); i++) {
 
@@ -49,6 +50,7 @@ public:
 private:
   Point position;
   Point rotation;
+  Point origin; // TODO: Implement
 
   std::vector<Point> points;
   std::vector<Edge> edges;
