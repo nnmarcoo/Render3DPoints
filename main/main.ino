@@ -25,8 +25,7 @@ void setup(void) {
  
 unsigned int frame = 0;
 void loop(void) {
-  tesseract.Rotate(0, 2, 0.015f);
-  penteract.Rotate(0, 2, 0.015f);
+  //tesseract.Rotate(0, 2, 0.015f);
   renderer.Render();
 
  // if (frame < 600)
