@@ -6,11 +6,11 @@
 #include "PerspectiveCameraND.h"
 #include "Renderer.h"
 
-#define SCALE 85
+#define SCALE 20
  
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
-std::vector<Object*> objects = {&penteract};
+std::vector<Object*> objects = {&tesseract};
 
 PerspectiveCameraND camera;
 Renderer renderer(display, camera, objects);
