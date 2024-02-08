@@ -39,14 +39,6 @@ public:
     }
   }
 
-  // TODO: Implement
-  static Object GenSquare(unsigned int dimension) {
-    for (int i = 0; i < pow(2, dimension); i++) {
-
-    }
-    return {0, {}, {}};
-  }
-
 private:
   Point position;
   Point rotation;
