@@ -10,7 +10,7 @@
  
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, SCL, SDA, U8X8_PIN_NONE);
 
-std::vector<Object*> objects = {&tesseract};
+std::vector<Object*> objects = {&cube};
 
 PerspectiveCameraND camera;
 Renderer renderer(display, camera, objects);
@@ -21,11 +21,12 @@ void setup(void) {
   
   renderer.SetScale(SCALE);
   renderer.SetOrigin(64, 32);
+  cube.Setorigin({1,1,1});
 }
  
 unsigned int frame = 0;
 void loop(void) {
-  //tesseract.Rotate(0, 2, 0.015f);
+  cube.Rotate(0, 1, 0.015);
   renderer.Render();
 
  // if (frame < 600)
